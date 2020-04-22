@@ -1,22 +1,17 @@
-import React, { useState} from 'react';
+import React from 'react';
 import './App.css';
-// import Home from './Home'
-import ToDoForm from './components/TodoForm'
+// import Home from './Home';
+import Users from './Users'
 
 function App() {
 
-  const [todos, setTodos] = useState([])
-
-  function addTodo(todo) {
-    setTodos([todo, ...todos]);
-  }
+  
   return (
-    <div className="App">
-      {/* <Home /> */}
-      <h2>Todo or not toDo</h2>
-      <ToDoForm addTodo={addTodo}/>
-    </div>
-  );
+		<div className="App">
+			{/* <Home /> */}
+		  <Users/>
+		</div>
+	);
 }
 
 export default App;

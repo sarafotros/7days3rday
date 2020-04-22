@@ -31,7 +31,7 @@ export default class Home extends Component {
                     <ul>
                         {items.map((item) => (
                             <li key={item.id}>
-                                {item.name} | Email: { item.email}
+                                {item.name} | { item.email}
                             </li>
                         ))}
                     </ul>
