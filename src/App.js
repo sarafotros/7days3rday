@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
 // import Home from './Home';
-import Users from './Users'
+import Users from './Users';
+import Tables from './Tables'
+
 
 function App() {
 
@@ -9,7 +11,8 @@ function App() {
   return (
 		<div className="App">
 			{/* <Home /> */}
-		  <Users/>
+		  <Users />
+		  <Tables/>
 		</div>
 	);
 }

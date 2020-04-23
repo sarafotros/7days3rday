@@ -21,17 +21,17 @@ export default class Users extends Component {
 	render() {
 		const { loading, person } = this.state;
 		return (
-            <div>
-                
+			<div>
 				<div
 					style={{
 						margin: 20,
-						padding: 30,
+						padding: 10,
 						border: '2px black solid',
-						width: 300,
-						height: 400,
+						width: 280,
+						height: 200,
 						display: 'flex',
 						flexDirection: 'column',
+						borderRadius: 8,
 					}}
 				>
 					{loading || !person ? (
@@ -46,20 +46,15 @@ export default class Users extends Component {
 
 							<div style={{ display: 'flex', flexDirection: 'column' }}>
 								<div>
-									{person.name.title}. {person.name.first}-
+									{person.name.title}. {person.name.first}-{' '}
+									<span>{person.name.last}</span>
 								</div>
-
-								<span>{person.name.last}</span>
 								<div>city: {person.location.city}</div>
 								<span>Email: {person.email}</span>
 							</div>
 						</div>
 					)}
-                </div>
-                {/* <input type="checkbox" className='checkbox' />
-                <label htmlFor="checkbox" className="checkbox"></label>
-                <i class></i> */}
-
+				</div>
 			</div>
 		);
 	}
