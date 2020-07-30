@@ -1,0 +1,15 @@
+.joke {
+	display: flex;
+	min-height: 100vh;
+	background-color: rgb(159, 250, 144);
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+button {
+	width: 130px;
+	height: 60px;
+	background-color: black;
+	color: blanchedalmond;
+	font-size: 30px;
+}

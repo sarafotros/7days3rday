@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styles from './styles';
 
-
 class Tables extends Component {
 	state = {
 		users: [],
@@ -13,45 +12,50 @@ class Tables extends Component {
 			.then((res) => res.json())
 			.then((json) => {
 				this.setState({
-					//
 					users: json,
 				});
 			});
-    }
-    getUsers = () => {
-        this.setState({
-            isLoaded: true, 
-        })
-    }
+	}
+	getUsers = () => {
+		this.setState({
+			isLoaded: true,
+		});
+	};
 
-    deleteUser = (id) =>{
-        this.setState(state => ({
-            users: state.users.filter((user) =>  user.id !==id )
-        }))
-    }
+	deleteUser = (id) => {
+		this.setState((state) => ({
+			users: state.users.filter((user) => user.id !== id),
+		}));
+	};
 
 	render() {
 		const { isLoaded, users } = this.state;
 
-        if (!isLoaded || users.length === 0) {
-             return (
-             <div style={{ display: 'flex', flexDirection: 'column',alignItems:'center'}}>
-                <span>Loading... </span>
-                <button
-                    style={{
-                        borderBottom: '2px solid grey',
-                        padding: 5,
-                        height: 30,
-                        width: 90,
-                        marginTop: 40,
-                        borderRadius:4,
-                         }}
-                         onClick={this.getUsers}
-                >
-                    Get Users
-                </button>
-            </div>
-        );
+		if (!isLoaded || users.length === 0) {
+			return (
+				<div
+					style={{
+						display: 'flex',
+						flexDirection: 'column',
+						alignItems: 'center',
+					}}
+				>
+					<span>Loading... </span>
+					<button
+						style={{
+							borderBottom: '2px solid grey',
+							padding: 5,
+							height: 30,
+							width: 90,
+							marginTop: 40,
+							borderRadius: 4,
+						}}
+						onClick={this.getUsers}
+					>
+						Get Users
+					</button>
+				</div>
+			);
 		} else {
 			return (
 				<div style={styles.tablediv}>
